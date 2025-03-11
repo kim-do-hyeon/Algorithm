@@ -1,8 +1,15 @@
-# 대칭 차집합
+# 백준 1269 - 대칭 차집합
+# 분류 : 집합
 
-n, m = map(int, input().split())
-a = list(map(int, input().split()))
-b = list(map(int, input().split()))
-a_b = list(set(a) - set(b))
-b_a = list(set(b) - set(a))
-print(len(a_b) + len(b_a))
+N, M = map(int, input().split())
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+A = set(A)
+
+count = 0
+for b in B :
+    if b in A :
+        count += 1
+
+print(N + M - 2 * count)
